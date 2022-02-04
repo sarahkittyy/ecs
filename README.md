@@ -94,6 +94,10 @@ cd build
 make test
 ```
 
+## Docs
+
+Find the docs [here!](https://sarahkittyy.github.io/ecs/)
+
 ## Including in your project with CMake
 
 ```cmake
@@ -106,5 +110,3 @@ target_include_directories(ecs
 		${CMAKE_SOURCE_DIR}/submodules/ecs/include/
 )
 ```
-
-## Docs
