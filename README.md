@@ -77,7 +77,7 @@ int main() {
 ## Building
 
 ```bash
-git clone https://github.com/sarahkittyy/ecs.git
+git clone --recurse-submodules https://github.com/sarahkittyy/ecs.git
 cd ecs
 mkdir build
 cd build
