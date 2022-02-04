@@ -1,4 +1,4 @@
-# ecs
+# ecs ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/sarahkittyy/ecs/CMake)
 
 I saw https://github.com/skypjack/entt and challenged myself to make my own (without cheating, of course ;)
 
