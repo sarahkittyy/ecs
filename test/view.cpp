@@ -13,6 +13,10 @@ struct color {
 	float b;
 };
 
+struct unused {
+	double x;
+};
+
 TEST_CASE("Viewing components works.") {
 	using namespace ecs;
 	GIVEN("Some entities") {
@@ -28,6 +32,18 @@ TEST_CASE("Viewing components works.") {
 				THEN("We can retrieve the entity") {
 					REQUIRE(col.r == 0.2f);
 				}
+			}
+		}
+		WHEN("We try fetching a component that doesn't exist") {
+			THEN("A ranged based for loop never runs.") {
+				for (auto& [_] : reg.view<unused>()) {
+					REQUIRE(false);
+				}
+			}
+			THEN("A callback is never called.") {
+				reg.view<unused>().each([](unused& u) {
+					REQUIRE(false);
+				});
 			}
 		}
 		WHEN("We retrieve a view of one component") {
