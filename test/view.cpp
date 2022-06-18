@@ -22,7 +22,15 @@ TEST_CASE("Viewing components works.") {
 		e1->add<position>(2, 4);
 		e2->add<position>(8, 9);
 		e2->add<color>(.2f, .2f, .8f);
-		WHEN("We retrieve a view of one element") {
+		REQUIRE(e2->get<color>().g == .2f);
+		WHEN("We use a ranged-based for loop over a view of one component") {
+			for (auto& [col] : reg.view<color>()) {
+				THEN("We can retrieve the entity") {
+					REQUIRE(col.r == 0.2f);
+				}
+			}
+		}
+		WHEN("We retrieve a view of one component") {
 			view v = reg.view<position>();
 			THEN("We can iterate over it.") {
 				int calls = 0;
@@ -68,7 +76,7 @@ TEST_CASE("Viewing components works.") {
 				REQUIRE_THROWS(e2->get<position>().y == 12);
 			}
 		}
-		WHEN("We retrieve a view of two elements") {
+		WHEN("We retrieve a view of two components") {
 			view v = reg.view<position, color>();
 			THEN("We can iterate over it.") {
 				int calls = 0;

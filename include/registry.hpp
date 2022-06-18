@@ -176,6 +176,7 @@ private:
 	std::list<entity_t> m_entities;
 
 	/// map of component types to their storage pool
+public:
 	std::unordered_map<std::type_index, component_pool> m_components;
 };
 

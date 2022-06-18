@@ -31,9 +31,9 @@ public:
 			m_iter = m_reg.entities().end();
 		} else {
 			m_iter = m_reg.entities().begin();
-			while (idx-- > 0) {
-				m_iter++;
-			}
+			do {
+				filter_increment();
+			} while (idx-- > 0);
 		}
 		compute_tuple();
 	}
@@ -48,12 +48,14 @@ public:
 
 	/// increment
 	view_iterator<Component, Components...>& operator++() {
-		m_iter++;
+		// iterate while making sure that the entity selected has the components necessary
+		++m_iter;
+		filter_increment();
 		compute_tuple();
 		return *this;
 	}
 	view_iterator<Component, Components...> operator++(int) {
-		auto tmp = *this;
+		view_iterator<Component, Components...> tmp = *this;
 		++(*this);
 		compute_tuple();
 		return tmp;
@@ -86,6 +88,12 @@ private:
 			new std::tuple<Component&, Components&...>(
 				ent->get<Component>(),
 				ent->get<Components>()...));
+	}
+	/// checks if the current element is valid. if not, increments until end(), or until a valid element is found
+	void filter_increment() {
+		while (m_iter != m_reg.entities().end() && !(*m_iter)->has<Component, Components...>()) {
+			m_iter++;
+		}
 	}
 };
 

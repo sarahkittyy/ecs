@@ -87,7 +87,7 @@ public:
 		assert_alive();
 		std::type_index ti(typeid(Component));
 		if (!m_lookup.contains(ti)) {
-			throw std::runtime_error("get() Component does not exist.");
+			throw std::runtime_error("get() Component " + std::string(ti.name()) + " does not exist.");
 		}
 		return m_reg.get<Component>(m_lookup.at(ti));
 	}
@@ -102,7 +102,7 @@ public:
 		assert_alive();
 		std::type_index ti(typeid(Component));
 		if (!m_lookup.contains(ti)) {
-			throw std::runtime_error("get() Component does not exist.");
+			throw std::runtime_error("get() Component " + std::string(ti.name()) + " does not exist.");
 		}
 		return m_reg.get<Component>(m_lookup.at(ti));
 	}

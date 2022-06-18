@@ -23,6 +23,7 @@ static void movement_system(registry& reg) {
 		position.x += velocity.x;
 		position.y += velocity.y;
 	}
+	exit(0);
 }
 
 static void game_tick(registry& reg) {

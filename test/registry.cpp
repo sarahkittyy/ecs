@@ -34,7 +34,7 @@ TEST_CASE("Entity registry works.") {
 					REQUIRE_THROWS(e1->remove<color>());
 				}
 			}
-			WHEN("We add two components to it") {
+			WHEN("We add multiple components to it") {
 				e1->add<position>(5, 3);
 				e1->add<color>(.2f, .2f, .8f);
 				THEN("The entity has those components.") {
