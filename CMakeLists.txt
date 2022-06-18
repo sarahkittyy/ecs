@@ -19,7 +19,7 @@ if(BUILD_SANDBOX)
 	add_subdirectory(sandbox/)
 endif()
 
-target_compile_options(ecs PUBLIC -Wall)
+target_compile_options(ecs PUBLIC -Wall -Wno-unused-variable)
 target_include_directories(ecs PUBLIC
 	"include/"
 	PRIVATE
