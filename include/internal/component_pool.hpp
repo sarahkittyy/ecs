@@ -25,7 +25,7 @@ public:
 	 * @remarks throws if the pool is full
 	 */
 	template <typename T>
-	size_t add(T t) {
+	size_t add(T&& t) {
 		if (sizeof(T) != COMP_SZ) {
 			throw std::runtime_error("Attempt to add a component of incompatible size.");
 		}
@@ -36,7 +36,7 @@ public:
 				(make the max size larger)");
 		}
 		size_t slot = m_next_slot;
-		data[slot]	= t;
+		data[slot]	= std::move(t);
 		set_bit(slot);
 		find_free_slot();
 		m_count++;

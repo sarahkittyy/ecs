@@ -101,10 +101,10 @@ private:
 		std::type_index ti(typeid(Component));
 		// construct the component pool of this type if it does not exist
 		if (!m_components.contains(ti)) {
-			m_components.emplace(
-				std::piecewise_construct,
-				std::forward_as_tuple(typeid(Component)),
-				std::forward_as_tuple(MAX_COMPONENTS, (size_t)sizeof(Component)));
+			m_components.try_emplace(
+				ti,
+				MAX_COMPONENTS,
+				(size_t)sizeof(Component));
 		}
 		if (!m_components.contains(ti)) throw std::logic_error(";-;");
 		// retrieve the pool
