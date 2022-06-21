@@ -60,8 +60,18 @@ public:
 	 * @tparam Components the components required for each entity returned
 	 */
 	template <typename... Components>
-	view<Components...> view() {
-		return ecs::view<Components...>(*this);
+	ecs::view<Components...> view() {
+		return ecs::view<Components...>(this);
+	}
+
+	/**
+	 * @brief retrieves a view of all entites with the component(s) listed
+	 *
+	 * @tparam Components the components required for each entity returned
+	 */
+	template <typename... Components>
+	const ecs::view<Components...> view() const {
+		return ecs::view<Components...>((const registry*)(this));
 	}
 
 	/**
