@@ -29,14 +29,15 @@ public:
 		if (sizeof(T) != COMP_SZ) {
 			throw std::runtime_error("Attempt to add a component of incompatible size.");
 		}
-		T* data = reinterpret_cast<T*>(m_data);
 		if (m_next_slot >= MAX_SZ) {
 			throw std::out_of_range(
 				"Not enough room in the component pool! \
 				(make the max size larger)");
 		}
-		size_t slot = m_next_slot;
-		data[slot]	= std::move(t);
+		char* t_bytes = reinterpret_cast<char*>(&t);
+		size_t slot	  = m_next_slot;
+		// copies bytes without calling move or copy constructor.
+		std::copy(t_bytes, t_bytes + sizeof(T), m_data + slot * sizeof(T));
 		set_bit(slot);
 		find_free_slot();
 		m_count++;
