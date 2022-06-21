@@ -88,10 +88,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa5b4f672c90bc092af7cd7a65f99e57c"><td class="memItemLeft" align="right" valign="top"><a id="aa5b4f672c90bc092af7cd7a65f99e57c" name="aa5b4f672c90bc092af7cd7a65f99e57c"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>component_pool</b> (<a class="el" href="classecs_1_1component__pool.html">component_pool</a> &amp;&amp;other)=delete</td></tr>
 <tr class="separator:aa5b4f672c90bc092af7cd7a65f99e57c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a824cb676a271e154588028742be749a5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a824cb676a271e154588028742be749a5"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecs_1_1component__pool.html#a824cb676a271e154588028742be749a5">add</a> (T t)</td></tr>
-<tr class="memdesc:a824cb676a271e154588028742be749a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">add a component to the pool  <a href="classecs_1_1component__pool.html#a824cb676a271e154588028742be749a5">More...</a><br /></td></tr>
-<tr class="separator:a824cb676a271e154588028742be749a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a123f36f55742b1787724851c448de4bd"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a123f36f55742b1787724851c448de4bd"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecs_1_1component__pool.html#a123f36f55742b1787724851c448de4bd">add</a> (T &amp;&amp;t)</td></tr>
+<tr class="memdesc:a123f36f55742b1787724851c448de4bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">add a component to the pool  <a href="classecs_1_1component__pool.html#a123f36f55742b1787724851c448de4bd">More...</a><br /></td></tr>
+<tr class="separator:a123f36f55742b1787724851c448de4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e8b10a6f26651f24d03d8f145c44ea0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1component__pool.html#a3e8b10a6f26651f24d03d8f145c44ea0">clone</a> (size_t idx)</td></tr>
 <tr class="memdesc:a3e8b10a6f26651f24d03d8f145c44ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">clone an index into the next available slot  <a href="classecs_1_1component__pool.html#a3e8b10a6f26651f24d03d8f145c44ea0">More...</a><br /></td></tr>
 <tr class="separator:a3e8b10a6f26651f24d03d8f145c44ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,8 +160,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a824cb676a271e154588028742be749a5" name="a824cb676a271e154588028742be749a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a824cb676a271e154588028742be749a5">&#9670;&nbsp;</a></span>add()</h2>
+<a id="a123f36f55742b1787724851c448de4bd" name="a123f36f55742b1787724851c448de4bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a123f36f55742b1787724851c448de4bd">&#9670;&nbsp;</a></span>add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,7 +174,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">size_t ecs::component_pool::add </td>
           <td>(</td>
-          <td class="paramtype">T&#160;</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
           <td class="paramname"><em>t</em></td><td>)</td>
           <td></td>
         </tr>

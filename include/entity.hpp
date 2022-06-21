@@ -24,9 +24,10 @@ public:
 	 *
 	 * @tparam Component the type of component to add
 	 * @param args the arguments to construct the component with
+	 * @returns Reference to the newly added component
 	 */
 	template <typename Component, typename... Args>
-	void add(Args&&... args) {
+	Component& add(Args&&... args) {
 		assert_alive();
 		std::type_index ti(typeid(Component));
 		if (m_lookup.contains(ti)) {
@@ -34,6 +35,7 @@ public:
 		}
 		size_t idx	 = m_reg.add<Component>(args...);
 		m_lookup[ti] = idx;
+		return m_reg.get<Component>(idx);
 	}
 
 	/**

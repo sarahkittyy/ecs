@@ -81,10 +81,10 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1f14f2fcd497f1dbd7cf00c74e32d702"><td class="memTemplParams" colspan="2">template&lt;typename Component , typename... Args&gt; </td></tr>
-<tr class="memitem:a1f14f2fcd497f1dbd7cf00c74e32d702"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecs_1_1entity.html#a1f14f2fcd497f1dbd7cf00c74e32d702">add</a> (Args &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a1f14f2fcd497f1dbd7cf00c74e32d702"><td class="mdescLeft">&#160;</td><td class="mdescRight">add a component to this entity  <a href="classecs_1_1entity.html#a1f14f2fcd497f1dbd7cf00c74e32d702">More...</a><br /></td></tr>
-<tr class="separator:a1f14f2fcd497f1dbd7cf00c74e32d702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeabbef6afb51c1f17c5d3b5067785058"><td class="memTemplParams" colspan="2">template&lt;typename Component , typename... Args&gt; </td></tr>
+<tr class="memitem:aeabbef6afb51c1f17c5d3b5067785058"><td class="memTemplItemLeft" align="right" valign="top">Component &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecs_1_1entity.html#aeabbef6afb51c1f17c5d3b5067785058">add</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:aeabbef6afb51c1f17c5d3b5067785058"><td class="mdescLeft">&#160;</td><td class="mdescRight">add a component to this entity  <a href="classecs_1_1entity.html#aeabbef6afb51c1f17c5d3b5067785058">More...</a><br /></td></tr>
+<tr class="separator:aeabbef6afb51c1f17c5d3b5067785058"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dcb9a428b03dea258962f0d1a426f97"><td class="memTemplParams" colspan="2">template&lt;typename Component &gt; </td></tr>
 <tr class="memitem:a3dcb9a428b03dea258962f0d1a426f97"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecs_1_1entity.html#a3dcb9a428b03dea258962f0d1a426f97">remove</a> ()</td></tr>
 <tr class="memdesc:a3dcb9a428b03dea258962f0d1a426f97"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove a component from this entity  <a href="classecs_1_1entity.html#a3dcb9a428b03dea258962f0d1a426f97">More...</a><br /></td></tr>
@@ -147,8 +147,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1f14f2fcd497f1dbd7cf00c74e32d702" name="a1f14f2fcd497f1dbd7cf00c74e32d702"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f14f2fcd497f1dbd7cf00c74e32d702">&#9670;&nbsp;</a></span>add()</h2>
+<a id="aeabbef6afb51c1f17c5d3b5067785058" name="aeabbef6afb51c1f17c5d3b5067785058"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeabbef6afb51c1f17c5d3b5067785058">&#9670;&nbsp;</a></span>add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,7 +159,7 @@ template&lt;typename Component , typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ecs::entity::add </td>
+          <td class="memname">Component &amp; ecs::entity::add </td>
           <td>(</td>
           <td class="paramtype">Args &amp;&amp;...&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
@@ -186,8 +186,9 @@ template&lt;typename Component , typename... Args&gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the newly added component </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="entity_8hpp_source.html#l00029">29</a> of file <a class="el" href="entity_8hpp_source.html">entity.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="entity_8hpp_source.html#l00030">30</a> of file <a class="el" href="entity_8hpp_source.html">entity.hpp</a>.</p>
 
 </div>
 </div>
@@ -267,7 +268,7 @@ template&lt;typename Component &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="entity_8hpp_source.html#l00086">86</a> of file <a class="el" href="entity_8hpp_source.html">entity.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="entity_8hpp_source.html#l00088">88</a> of file <a class="el" href="entity_8hpp_source.html">entity.hpp</a>.</p>
 
 </div>
 </div>
@@ -304,7 +305,7 @@ template&lt;typename Component &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="entity_8hpp_source.html#l00101">101</a> of file <a class="el" href="entity_8hpp_source.html">entity.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="entity_8hpp_source.html#l00103">103</a> of file <a class="el" href="entity_8hpp_source.html">entity.hpp</a>.</p>
 
 </div>
 </div>
@@ -341,7 +342,7 @@ template&lt;typename... Components&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="entity_8hpp_source.html#l00061">61</a> of file <a class="el" href="entity_8hpp_source.html">entity.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="entity_8hpp_source.html#l00063">63</a> of file <a class="el" href="entity_8hpp_source.html">entity.hpp</a>.</p>
 
 </div>
 </div>
@@ -463,7 +464,7 @@ template&lt;typename Component &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="entity_8hpp_source.html#l00045">45</a> of file <a class="el" href="entity_8hpp_source.html">entity.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="entity_8hpp_source.html#l00047">47</a> of file <a class="el" href="entity_8hpp_source.html">entity.hpp</a>.</p>
 
 </div>
 </div>
@@ -488,7 +489,7 @@ template&lt;typename Component &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="entity_8hpp_source.html#l00131">131</a> of file <a class="el" href="entity_8hpp_source.html">entity.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="entity_8hpp_source.html#l00133">133</a> of file <a class="el" href="entity_8hpp_source.html">entity.hpp</a>.</p>
 
 </div>
 </div>

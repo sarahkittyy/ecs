@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['registry_0',['registry',['../classecs_1_1registry.html',1,'ecs::registry'],['../classecs_1_1registry.html#ab73a3dc6889bf5fbce278f102f0a5b08',1,'ecs::registry::registry()']]],
-  ['remove_1',['remove',['../classecs_1_1entity.html#a3dcb9a428b03dea258962f0d1a426f97',1,'ecs::entity::remove()'],['../classecs_1_1component__pool.html#a90b1c3bfb3aa01fe805abfe9c3250b23',1,'ecs::component_pool::remove()'],['../classecs_1_1registry.html#a8ab9878a20334c708363670333fb2e94',1,'ecs::registry::remove()']]]
+  ['pool_0',['pool',['../classecs_1_1registry.html#a58ff343d3737d08414fbb4bba0873a02',1,'ecs::registry::pool(std::type_index ti)'],['../classecs_1_1registry.html#a6d0a0fef2b45ad7a8068759f32acc48f',1,'ecs::registry::pool(std::type_index ti) const']]]
 ];

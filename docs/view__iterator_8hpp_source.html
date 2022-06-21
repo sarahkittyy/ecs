@@ -92,9 +92,9 @@ $(function() {
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            m_iter = m_reg.<a class="code hl_function" href="classecs_1_1registry.html#a8af231c9b2d4405d3498921522768bf5">entities</a>().end();</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            m_iter = m_reg.<a class="code hl_function" href="classecs_1_1registry.html#a8af231c9b2d4405d3498921522768bf5">entities</a>().begin();</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordflow">while</span> (idx-- &gt; 0) {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                m_iter++;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordflow">do</span> {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                filter_increment();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            } <span class="keywordflow">while</span> (idx-- &gt; 0);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        compute_tuple();</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
@@ -107,42 +107,49 @@ $(function() {
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classecs_1_1view__iterator.html#a0d68eb645adbd477dd69c49292076ab7">   50</a></span>    <a class="code hl_class" href="classecs_1_1view__iterator.html">view_iterator</a>&lt;Component, Components...&gt;&amp; <a class="code hl_function" href="classecs_1_1view__iterator.html#a0d68eb645adbd477dd69c49292076ab7">operator++</a>() {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        m_iter++;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        compute_tuple();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_class" href="classecs_1_1view__iterator.html">view_iterator</a>&lt;Component, Components...&gt; <a class="code hl_function" href="classecs_1_1view__iterator.html#a0d68eb645adbd477dd69c49292076ab7">operator++</a>(<span class="keywordtype">int</span>) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keyword">auto</span> tmp = *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        ++(*this);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        compute_tuple();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">return</span> tmp;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classecs_1_1view__iterator.html#aba1d5ebb720b09f389a014a8cf3583c6">   63</a></span>    <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code hl_friend" href="classecs_1_1view__iterator.html#aba1d5ebb720b09f389a014a8cf3583c6">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="classecs_1_1view__iterator.html">view_iterator&lt;Component, Components...&gt;</a>&amp; a,</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                           <span class="keyword">const</span> <a class="code hl_class" href="classecs_1_1view__iterator.html">view_iterator&lt;Component, Components...&gt;</a>&amp; b) {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">return</span> a.m_iter == b.m_iter;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">friend</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code hl_class" href="classecs_1_1view__iterator.html">view_iterator&lt;Component, Components...&gt;</a>&amp; a,</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                           <span class="keyword">const</span> <a class="code hl_class" href="classecs_1_1view__iterator.html">view_iterator&lt;Component, Components...&gt;</a>&amp; b) {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">return</span> !(a == b);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    registry&amp; m_reg;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> m_entity_count;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    std::list&lt;entity_t&gt;::iterator m_iter;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    std::unique_ptr&lt;std::tuple&lt;Component&amp;, Components&amp;...&gt;&gt; m_tuple;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">void</span> compute_tuple() {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">if</span> (m_iter == m_reg.entities().end()) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        entity_t ent = *m_iter;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        m_tuple.reset(</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="keyword">new</span> std::tuple&lt;Component&amp;, Components&amp;...&gt;(</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                ent-&gt;get&lt;Component&gt;(),</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                ent-&gt;get&lt;Components&gt;()...));</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>};</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="comment">// iterate while making sure that the entity selected has the components necessary</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        ++m_iter;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        filter_increment();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        compute_tuple();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_class" href="classecs_1_1view__iterator.html">view_iterator</a>&lt;Component, Components...&gt; <a class="code hl_function" href="classecs_1_1view__iterator.html#a0d68eb645adbd477dd69c49292076ab7">operator++</a>(<span class="keywordtype">int</span>) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_class" href="classecs_1_1view__iterator.html">view_iterator</a>&lt;Component, Components...&gt; tmp = *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        ++(*this);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        compute_tuple();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classecs_1_1view__iterator.html#aba1d5ebb720b09f389a014a8cf3583c6">   65</a></span>    <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code hl_friend" href="classecs_1_1view__iterator.html#aba1d5ebb720b09f389a014a8cf3583c6">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="classecs_1_1view__iterator.html">view_iterator&lt;Component, Components...&gt;</a>&amp; a,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                           <span class="keyword">const</span> <a class="code hl_class" href="classecs_1_1view__iterator.html">view_iterator&lt;Component, Components...&gt;</a>&amp; b) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">return</span> a.m_iter == b.m_iter;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">friend</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code hl_class" href="classecs_1_1view__iterator.html">view_iterator&lt;Component, Components...&gt;</a>&amp; a,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                           <span class="keyword">const</span> <a class="code hl_class" href="classecs_1_1view__iterator.html">view_iterator&lt;Component, Components...&gt;</a>&amp; b) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">return</span> !(a == b);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    registry&amp; m_reg;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> m_entity_count;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    std::list&lt;entity_t&gt;::iterator m_iter;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    std::unique_ptr&lt;std::tuple&lt;Component&amp;, Components&amp;...&gt;&gt; m_tuple;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> compute_tuple() {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">if</span> (m_iter == m_reg.entities().end()) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        entity_t ent = *m_iter;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        m_tuple.reset(</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="keyword">new</span> std::tuple&lt;Component&amp;, Components&amp;...&gt;(</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                ent-&gt;get&lt;Component&gt;(),</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                ent-&gt;get&lt;Components&gt;()...));</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">void</span> filter_increment() {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordflow">while</span> (m_iter != m_reg.entities().end() &amp;&amp; !(*m_iter)-&gt;has&lt;Component, Components...&gt;()) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            m_iter++;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>};</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
 <div class="ttc" id="aclassecs_1_1registry_html"><div class="ttname"><a href="classecs_1_1registry.html">ecs::registry</a></div><div class="ttdoc">registry of entities and their components provides apis to access all entities / components</div><div class="ttdef"><b>Definition:</b> <a href="registry_8hpp_source.html#l00025">registry.hpp:25</a></div></div>
 <div class="ttc" id="aclassecs_1_1registry_html_a183091568c62eb32bbf1bd9f25757cbd"><div class="ttname"><a href="classecs_1_1registry.html#a183091568c62eb32bbf1bd9f25757cbd">ecs::registry::count</a></div><div class="ttdeci">size_t count() const</div><div class="ttdef"><b>Definition:</b> <a href="registry_8cpp_source.html#l00037">registry.cpp:37</a></div></div>
 <div class="ttc" id="aclassecs_1_1registry_html_a8af231c9b2d4405d3498921522768bf5"><div class="ttname"><a href="classecs_1_1registry.html#a8af231c9b2d4405d3498921522768bf5">ecs::registry::entities</a></div><div class="ttdeci">std::list&lt; entity_t &gt; &amp; entities()</div><div class="ttdoc">retrieve all entities</div><div class="ttdef"><b>Definition:</b> <a href="registry_8cpp_source.html#l00041">registry.cpp:41</a></div></div>
@@ -150,7 +157,7 @@ $(function() {
 <div class="ttc" id="aclassecs_1_1view__iterator_html_a0d68eb645adbd477dd69c49292076ab7"><div class="ttname"><a href="classecs_1_1view__iterator.html#a0d68eb645adbd477dd69c49292076ab7">ecs::view_iterator::operator++</a></div><div class="ttdeci">view_iterator&lt; Component, Components... &gt; &amp; operator++()</div><div class="ttdoc">increment</div><div class="ttdef"><b>Definition:</b> <a href="view__iterator_8hpp_source.html#l00050">view_iterator.hpp:50</a></div></div>
 <div class="ttc" id="aclassecs_1_1view__iterator_html_a46237b6735fabc95f6e4488c44135d06"><div class="ttname"><a href="classecs_1_1view__iterator.html#a46237b6735fabc95f6e4488c44135d06">ecs::view_iterator::operator*</a></div><div class="ttdeci">std::tuple&lt; Component &amp;, Components &amp;... &gt; &amp; operator*()</div><div class="ttdoc">dereferencing</div><div class="ttdef"><b>Definition:</b> <a href="view__iterator_8hpp_source.html#l00042">view_iterator.hpp:42</a></div></div>
 <div class="ttc" id="aclassecs_1_1view__iterator_html_a7f4f1cd35e28349a2bc4a65eefd5248d"><div class="ttname"><a href="classecs_1_1view__iterator.html#a7f4f1cd35e28349a2bc4a65eefd5248d">ecs::view_iterator::view_iterator</a></div><div class="ttdeci">view_iterator(registry &amp;reg, size_t idx)</div><div class="ttdoc">construct the iterator</div><div class="ttdef"><b>Definition:</b> <a href="view__iterator_8hpp_source.html#l00027">view_iterator.hpp:27</a></div></div>
-<div class="ttc" id="aclassecs_1_1view__iterator_html_aba1d5ebb720b09f389a014a8cf3583c6"><div class="ttname"><a href="classecs_1_1view__iterator.html#aba1d5ebb720b09f389a014a8cf3583c6">ecs::view_iterator::operator==</a></div><div class="ttdeci">friend bool operator==(const view_iterator&lt; Component, Components... &gt; &amp;a, const view_iterator&lt; Component, Components... &gt; &amp;b)</div><div class="ttdoc">equality</div><div class="ttdef"><b>Definition:</b> <a href="view__iterator_8hpp_source.html#l00063">view_iterator.hpp:63</a></div></div>
+<div class="ttc" id="aclassecs_1_1view__iterator_html_aba1d5ebb720b09f389a014a8cf3583c6"><div class="ttname"><a href="classecs_1_1view__iterator.html#aba1d5ebb720b09f389a014a8cf3583c6">ecs::view_iterator::operator==</a></div><div class="ttdeci">friend bool operator==(const view_iterator&lt; Component, Components... &gt; &amp;a, const view_iterator&lt; Component, Components... &gt; &amp;b)</div><div class="ttdoc">equality</div><div class="ttdef"><b>Definition:</b> <a href="view__iterator_8hpp_source.html#l00065">view_iterator.hpp:65</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

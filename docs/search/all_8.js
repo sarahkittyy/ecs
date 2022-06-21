@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['pool_0',['pool',['../classecs_1_1registry.html#a58ff343d3737d08414fbb4bba0873a02',1,'ecs::registry::pool(std::type_index ti)'],['../classecs_1_1registry.html#a6d0a0fef2b45ad7a8068759f32acc48f',1,'ecs::registry::pool(std::type_index ti) const']]]
+  ['operator_2a_0',['operator*',['../classecs_1_1view__iterator.html#a46237b6735fabc95f6e4488c44135d06',1,'ecs::view_iterator']]],
+  ['operator_2b_2b_1',['operator++',['../classecs_1_1view__iterator.html#a0d68eb645adbd477dd69c49292076ab7',1,'ecs::view_iterator']]],
+  ['operator_3d_3d_2',['operator==',['../classecs_1_1view__iterator.html#aba1d5ebb720b09f389a014a8cf3583c6',1,'ecs::view_iterator']]]
 ];

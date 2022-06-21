@@ -68,6 +68,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classecs_1_1registry-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ecs::registry Class Reference</div></div>
@@ -120,6 +121,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6d0a0fef2b45ad7a8068759f32acc48f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classecs_1_1component__pool.html">component_pool</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1registry.html#a6d0a0fef2b45ad7a8068759f32acc48f">pool</a> (std::type_index ti) const</td></tr>
 <tr class="memdesc:a6d0a0fef2b45ad7a8068759f32acc48f"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieve the pool saving the components of the given type  <a href="classecs_1_1registry.html#a6d0a0fef2b45ad7a8068759f32acc48f">More...</a><br /></td></tr>
 <tr class="separator:a6d0a0fef2b45ad7a8068759f32acc48f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a795243e3cc57d001a1fbe6336f8444e7"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::type_index, <a class="el" href="classecs_1_1component__pool.html">component_pool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1registry.html#a795243e3cc57d001a1fbe6336f8444e7">m_components</a></td></tr>
+<tr class="memdesc:a795243e3cc57d001a1fbe6336f8444e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">map of component types to their storage pool  <a href="classecs_1_1registry.html#a795243e3cc57d001a1fbe6336f8444e7">More...</a><br /></td></tr>
+<tr class="separator:a795243e3cc57d001a1fbe6336f8444e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -393,6 +400,25 @@ template&lt;typename... Components&gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="registry_8hpp_source.html#l00088">88</a> of file <a class="el" href="registry_8hpp_source.html">registry.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a795243e3cc57d001a1fbe6336f8444e7" name="a795243e3cc57d001a1fbe6336f8444e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a795243e3cc57d001a1fbe6336f8444e7">&#9670;&nbsp;</a></span>m_components</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::type_index, <a class="el" href="classecs_1_1component__pool.html">component_pool</a>&gt; ecs::registry::m_components</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>map of component types to their storage pool </p>
+
+<p class="definition">Definition at line <a class="el" href="registry_8hpp_source.html#l00180">180</a> of file <a class="el" href="registry_8hpp_source.html">registry.hpp</a>.</p>
 
 </div>
 </div>
