@@ -154,8 +154,6 @@ private:
 	const registry& reg() const {
 		if (m_reg_const)
 			return *m_reg_const;
-		else if (m_reg)
-			return *m_reg;
 		else
 			throw std::runtime_error("No constant registry object in constant registry view.");
 	}

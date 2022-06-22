@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstddef>
+#include <memory>
 #include <stdexcept>
 
 namespace ecs {
@@ -24,9 +25,9 @@ public:
 	 *
 	 * @remarks throws if the pool is full
 	 */
-	template <typename T>
-	size_t add(T&& t) {
-		if (sizeof(T) != COMP_SZ) {
+	template <typename Component, typename... Args>
+	size_t add(Args&&... args) {
+		if (sizeof(Component) != COMP_SZ) {
 			throw std::runtime_error("Attempt to add a component of incompatible size.");
 		}
 		if (m_next_slot >= MAX_SZ) {
@@ -34,10 +35,10 @@ public:
 				"Not enough room in the component pool! \
 				(make the max size larger)");
 		}
-		char* t_bytes = reinterpret_cast<char*>(&t);
-		size_t slot	  = m_next_slot;
-		// copies bytes without calling move or copy constructor.
-		std::copy(t_bytes, t_bytes + sizeof(T), m_data + slot * sizeof(T));
+		size_t slot		= m_next_slot;
+		Component* data = reinterpret_cast<Component*>(m_data);
+		new (data + slot)(Component){ args... };
+
 		set_bit(slot);
 		find_free_slot();
 		m_count++;
@@ -49,6 +50,8 @@ public:
 	 *
 	 * @param idx the index of the component to clone
 	 * @return the index of the cloned component
+	 *
+	 * @remarks This is a shallow clone!
 	 */
 	size_t clone(size_t idx);
 

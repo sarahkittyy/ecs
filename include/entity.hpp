@@ -62,7 +62,7 @@ public:
 	template <typename... Components>
 	bool has() const {
 		assert_alive();
-		return (m_lookup.contains(std::type_index(typeid(Components))) && ...);
+		return (true && ... && m_lookup.contains(std::type_index(typeid(Components))));
 	}
 
 	/**

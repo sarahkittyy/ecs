@@ -120,7 +120,7 @@ private:
 		// retrieve the pool
 		component_pool& pool = m_components.at(ti);
 		// add the component
-		return pool.add(std::move(Component{ args... }));
+		return pool.add<Component, Args...>(args...);
 	}
 
 	/**

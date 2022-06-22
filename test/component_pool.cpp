@@ -8,8 +8,8 @@ TEST_CASE("Component pools work", "[component_pool]") {
 		component_pool cp(2, sizeof(double));
 		REQUIRE(cp.count() == 0);
 		WHEN("Components are added") {
-			size_t i = cp.add(5.0);
-			size_t j = cp.add(3.0);
+			size_t i = cp.add<double>(5.0);
+			size_t j = cp.add<double>(3.0);
 			REQUIRE(i == 0);
 			REQUIRE(j == 1);
 			THEN("The size updates accordingly") {
@@ -30,10 +30,10 @@ TEST_CASE("Component pools work", "[component_pool]") {
 			}
 		}
 		WHEN("Too many components are added") {
-			cp.add(5.0);
-			cp.add(3.0);
+			cp.add<double>(5.0);
+			cp.add<double>(3.0);
 			THEN("It throws") {
-				REQUIRE_THROWS(cp.add(8.0));
+				REQUIRE_THROWS(cp.add<double>(8.0));
 			}
 		}
 		WHEN("Nonexistent components are removed") {
@@ -42,13 +42,13 @@ TEST_CASE("Component pools work", "[component_pool]") {
 			}
 		}
 		WHEN("A hole is created") {
-			size_t i = cp.add(5.0);
-			size_t j = cp.add(3.0);
+			size_t i = cp.add<double>(5.0);
+			size_t j = cp.add<double>(3.0);
 			REQUIRE(i == 0);
 			REQUIRE(j == 1);
 			cp.remove(i);
 			THEN("A new added component fills that hole") {
-				REQUIRE(cp.add(2.8) == 0);
+				REQUIRE(cp.add<double>(2.8) == 0);
 			}
 		}
 	}
